@@ -8,12 +8,12 @@ def mat_mul(a,b):
         n=len(a)
         k1=len(a[0])
     else:
-        raise ValueError("1번 행렬이 비어있습니다")
+        raise ValueError("1번 행렬이 비어있습니다.")
     if b and b[0]:
         k2=len(b)
         m=len(b[0])
     else:
-        raise ValueError("2번 행렬이 비어있습니다")
+        raise ValueError("2번 행렬이 비어있습니다.")
     if k1==k2:
         k=k1
     else:
