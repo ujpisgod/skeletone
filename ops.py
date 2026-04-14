@@ -41,6 +41,12 @@ def mat_add(a,b):
             for j in range(a2):
                 c[i].append(a[i][j]+b[i][j])
         return c
+    elif b1==1 and a2==b2:
+        c=[[] for i in range(a1)]
+        for i in range(a1):
+            for j in range(a2):
+                c[i].append(a[i][j]+b[0][j])
+        return c
     else:
         raise ValueError('행과 열이 맞지 않는 행렬끼리는 더할 수 없습니다')
 def mat_sub(a,b):
@@ -66,5 +72,5 @@ def mat_sum_sq(a):
     n,m=ismat(a)
     for i in range(n):
         for j in range(m):
-            d+=a[n][m]**2
+            d+=a[i][j]**2
     return d
