@@ -43,6 +43,17 @@ def mat_add(a,b):
         return c
     else:
         raise ValueError('행과 열이 맞지 않는 행렬끼리는 더할 수 없습니다')
+def mat_sub(a,b):
+    a1,a2=ismat(a)
+    b1,b2=ismat(b)
+    if a1==b1 and a2==b2:
+        c=[[] for i in range(a1)]
+        for i in range(a1):
+            for j in range(a2):
+                c[i].append(a[i][j]-b[i][j])
+        return c
+    else:
+        raise ValueError('행과 열이 맞지 않는 행렬끼리는 뺄 수 없습니다')
 def relu(a):
     n,m=ismat(a)
     result=[[] for i in range(n)]
@@ -50,3 +61,10 @@ def relu(a):
         for j in range(m):
             result[i].append(max(0,a[i][j]))
     return result
+def mat_sum_sq(a):
+    d=0
+    n,m=ismat(a)
+    for i in range(n):
+        for j in range(m):
+            d+=a[n][m]**2
+    return d
