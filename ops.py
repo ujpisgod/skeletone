@@ -74,3 +74,36 @@ def mat_sum_sq(a):
         for j in range(m):
             d+=a[i][j]**2
     return d
+def tran(x):
+    n,m=ismat(x)
+    re=[[] for _ in range(m)]
+    for i in range(m):
+        for j in range(n):
+            re[i].append(x[j][i])
+    return re
+def mat_mul_scalar(A, scalar):
+    n, m = ismat(A)
+    result = [[0] * m for _ in range(n)]
+    for i in range(n):
+        for j in range(m):
+            result[i][j] = A[i][j] * scalar
+    return result
+def mat_sum_axis0(A):
+    n, m = ismat(A)
+    result = [[0] * m]
+    for i in range(n):
+        for j in range(m):
+            result[0][j] += A[i][j]
+    return result
+def relu_backward(dA, Z):
+    n, m = ismat(dA)
+    result = [[0]*m for _ in range(n)]
+    
+    for i in range(n):
+        for j in range(m):
+            if Z[i][j] > 0:
+                result[i][j]=dA[i][j]
+            else:
+                result[i][j]=0
+                
+    return result
