@@ -107,3 +107,11 @@ def relu_backward(dA, Z):
                 result[i][j]=0
                 
     return result
+def sigmod(x):
+    import math
+    n,m=ismat(x)
+    result=[[] for i in range(n)]
+    for i in range(n):
+        for j in range(m):
+            result[i].append(1/(1+math.exp(-x[i][j])))
+    return result

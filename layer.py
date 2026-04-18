@@ -37,7 +37,7 @@ for epoch in range(10000):
     dB1 = ops.mat_sum_axis0(dL1)
 
     # --- 업데이트 (Update) ---
-    lr = 0.1
+    lr = 0.05
     W2 = ops.mat_sub(W2, ops.mat_mul_scalar(dW2, lr))
     B2 = ops.mat_sub(B2, ops.mat_mul_scalar(dB2, lr))
     W1 = ops.mat_sub(W1, ops.mat_mul_scalar(dW1, lr))
